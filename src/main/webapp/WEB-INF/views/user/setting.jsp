@@ -32,7 +32,7 @@
             <div class="control-group">
                 <label class="control-label">电子邮件</label>
                 <div class="controls">
-                    <input type="text" name="email" value="${sessionScope.curr_user.email}">
+                    <input type="text" id="email" name="email" value="${sessionScope.curr_user.email}">
                 </div>
             </div>
             <div class="form-actions">
@@ -65,7 +65,7 @@
             <div class="control-group">
                 <label class="control-label">重复密码</label>
                 <div class="controls">
-                    <input type="password" name="repassword">
+                    <input type="password" name="repassword" id="repassword">
                 </div>
             </div>
             <div class="form-actions">

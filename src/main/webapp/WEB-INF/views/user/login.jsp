@@ -37,7 +37,7 @@
             <div class="control-group">
                 <label class="control-label">密码</label>
                 <div class="controls">
-                    <input type="password" name="password">
+                    <input type="password" name="password" id="password">
                 </div>
             </div>
             <div class="control-group">
@@ -64,5 +64,12 @@
 <script src="/static/js/jquery-1.11.1.js"></script>
 <script src="/static/js/jquery.validate.min.js"></script>
 <script src="/static/js/user/login.js"></script>
+<script>
+    $("#password").keydown(function(event){
+        if(event.keyCode==13){
+            $("#loginBtn").submit();
+        }
+    })
+</script>
 </body>
 </html>

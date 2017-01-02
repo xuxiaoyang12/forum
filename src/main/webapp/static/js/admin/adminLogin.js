@@ -19,6 +19,11 @@ $(function(){
     $("#loginBtn").click(function(){
         $("#loginForm").submit();
     });
+    $("#password").keydown(function(event){
+        if(event.keyCode==13){
+            $("#loginForm").submit();
+        }
+    })
 
     //登录表单验证规则
     $("#loginForm").validate({

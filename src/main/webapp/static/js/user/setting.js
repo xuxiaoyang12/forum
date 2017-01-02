@@ -4,6 +4,11 @@ $(function () {
         $("#basicForm").submit();
     });
 
+    $("#email").keydown(function(event){
+        if(event.keyCode==13){
+            $("#basicForm").submit();
+        }
+    });
     $("#basicForm").validate({
         errorElement:'span',
         errorClass:'text-error',
@@ -47,6 +52,11 @@ $(function () {
     //密码修改
     $("#passwordBtn").click(function () {
         $("#passwordForm").submit();
+    });
+    $("#repassword").keydown(function(event){
+        if(event.keyCode==13){
+            $("#passwordForm").submit();
+        }
     });
 
     $("#passwordForm").validate({
