@@ -6,7 +6,10 @@ import com.kaishengit.entity.Topic;
 import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
 import com.kaishengit.service.TopicService;
+import com.kaishengit.util.Config;
 import com.kaishengit.web.BaseServlet;
+import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletException;
@@ -26,6 +29,13 @@ public class EditTopicServlet extends BaseServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String topicid = req.getParameter("topicid");
+        Auth auth = Auth.create(Config.get("qiniu.ak"),Config.get("qiniu.sk"));
+        StringMap stringMap = new StringMap();
+        stringMap.put("returnBody","{ \"success\": true,\"file_path\": \""+Config.get("qiniu.domain")+"${key}\"}");
+        String token = auth.uploadToken(Config.get("qiniu.bucket"),null,3600,stringMap);
+
+        //获取nodelist到jsp页面
+
         if(StringUtils.isNumeric(topicid)) {
             TopicService topicService = new TopicService();
             Topic topic = topicService.findTopicById(topicid);
@@ -36,6 +46,7 @@ public class EditTopicServlet extends BaseServlet {
                 List<Node> nodeList = topicService.findAllNode();
                 req.setAttribute("nodeList", nodeList);
                 req.setAttribute("topic", topic);
+                req.setAttribute("token",token);
             }
             forward("topic/edittopic", req, resp);
         }else{
