@@ -55,9 +55,9 @@
                     </c:otherwise>
                 </c:choose>
                 <li><a href="">感谢</a></li>
-                <%--<c:if test="${requestScope.topic.userid==sessionScope.curr_user.id and requestScope.topic.edit }">--%>
+                <c:if test="${requestScope.topic.userid==sessionScope.curr_user.id and requestScope.topic.edit }">
                     <li><a href="/editTopic?topicid=${topic.id}">编辑</a></li>
-                <%--</c:if>--%>
+                </c:if>
             </ul>
             <ul class="unstyled inline pull-right muted">
                 <li>${topic.clicknum}次点击</li>

@@ -127,7 +127,7 @@ public class Topic {
         this.node = node;
     }
     //用户编辑设置 可编辑时效
-    public Boolean isEdit (){
+    public boolean isEdit (){
         //5分钟之内没人回复
         DateTime dt  = new DateTime(getCreatetime());
         if(dt.plusMinutes(5).isAfterNow() && getReplynum()==0){
