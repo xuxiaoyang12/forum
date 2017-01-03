@@ -70,6 +70,7 @@ $(function(){
                 success:function(data){
                     if(data.state == 'success') {
                         alert("注册成功，请去邮箱激活账号");
+                        window.location.href="/login";
                     } else {
                         alert(data.message);
                     }

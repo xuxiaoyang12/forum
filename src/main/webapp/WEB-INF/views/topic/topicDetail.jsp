@@ -6,8 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <title>凯盛论坛-${topic.title}</title>
-    <link href="http://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://cdn.bootcss.com/bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/js/editer/styles/simditor.css">
     <link rel="stylesheet" href="/static/css/styles/solarized-light.css">
@@ -34,7 +34,7 @@
 <div class="container">
     <div class="box">
         <ul class="breadcrumb" style="background-color: #fff;margin-bottom: 0px;">
-            <li><a href="#">首页</a> <span class="divider">/</span></li>
+            <li><a href="/home">首页</a> <span class="divider">/</span></li>
             <li class="active">${requestScope.topic.node.nodename}</li>
         </ul>
         <div class="topic-head">
@@ -131,6 +131,16 @@
 
 <script>
     $(function(){
+        //把时间转换成**前
+        $("#topicTime").text(moment($("#topicTime").text()).fromNow());
+        $("#lastreplytime").text(moment($("#lastreplytime").text()).format("YYYY年MM月DD日 HH:mm:ss"));
+        //回复贴时间应为没有固定id 所以用一个函数来确定每一个的时间段
+        $(".reply").text(function () {
+            var time = $(this).text();
+            return moment(time).fromNow();
+        });
+
+
 //        文本编辑器js
         var editor = new Simditor({
             textarea: $('#editor'),
@@ -142,14 +152,7 @@
            $("#replyForm").submit();
         });
 
-        //把时间转换成**前
-        $("#topicTime").text(moment($("#topicTime").text()).fromNow());
-        $("#lastreplytime").text(moment($("#lastreplytime").text()).format("YYYY年MM月DD日 HH:mm:ss"));
-        //回复贴时间应为没有固定id 所以用一个函数来确定每一个的时间段
-        $(".reply").text(function () {
-            var time = $(this).text();
-            return moment(time).fromNow();
-        });
+
 
         //添加回复信息的锚标记
         $(".replyLink").click(function(){
