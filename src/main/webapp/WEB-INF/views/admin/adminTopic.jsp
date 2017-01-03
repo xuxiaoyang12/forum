@@ -28,7 +28,7 @@
             <th>发布时间</th>
             <th>回复数量</th>
             <th>最后回复时间</th>
-            <th>节点</th>
+            <%--<th>节点</th>--%>
             <th>操作</th>
         </tr>
         </thead>
@@ -42,14 +42,14 @@
                 <td>${topic.createtime}</td>
                 <td>${topic.replynum}</td>
                 <td>${topic.lastreplytime}</td>
-                <td>
-                     <select name="nodeid" id="nodeid" style="margin-top:0px;">
-                        <option value="">请选择节点</option>
-                        <c:forEach items="${nodeList}" var="node">
-                            <option ${topic.nodeid==node.id?'selected':''} class="." value="${node.id}">${node.nodename}</option>
-                        </c:forEach>
-                    </select>
-                </td>
+                <%--<td>--%>
+                     <%--<select name="nodeid" id="nodeid" style="margin-top:0px;">--%>
+                        <%--<option value="">请选择节点</option>--%>
+                        <%--<c:forEach items="${nodeList}" var="node">--%>
+                            <%--<option ${topic.nodeid==node.id?'selected':''} class="." value="${node.id}">${node.nodename}</option>--%>
+                        <%--</c:forEach>--%>
+                    <%--</select>--%>
+                <%--</td>--%>
                 <td>
                     <a href="javascript:;" rel="${topic.id}" class="del">删除</a>
                 </td>
