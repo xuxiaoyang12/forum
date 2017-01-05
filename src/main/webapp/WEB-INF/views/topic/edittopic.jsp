@@ -85,15 +85,15 @@
             errorClass:"text-error",
             rules:{
                 title:{
-                    required:true,
+                    required:true
                 },
                 nodeid:{
-                    required:true,
+                    required:true
                 }
             },
             messages:{
                 title:{
-                    required:"请输入标题",
+                    required:"请输入标题"
                 },
                 nodeid:{
                     required:"请选择节点"

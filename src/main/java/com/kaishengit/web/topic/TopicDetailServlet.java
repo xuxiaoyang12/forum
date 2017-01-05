@@ -1,10 +1,7 @@
 package com.kaishengit.web.topic;
 
 import com.kaishengit.dto.JsonResult;
-import com.kaishengit.entity.Fav;
-import com.kaishengit.entity.Reply;
-import com.kaishengit.entity.Topic;
-import com.kaishengit.entity.User;
+import com.kaishengit.entity.*;
 import com.kaishengit.exception.ServiceException;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.web.BaseServlet;
@@ -36,10 +33,16 @@ public class TopicDetailServlet extends BaseServlet {
             User user = getCurrentUser(req);
             //判断用户是否收藏该主题
             if(user!=null&& StringUtils.isNumeric(topicId)){
+
                 Fav fav= service.findFavByUseridAndTopicid(user,topicId);
+                //判断是否感谢该主题
+                Thanks thanks = service.findThankByUserIdAndTopidid(user,topicId);
+                req.setAttribute("thanks" ,thanks);
                 req.setAttribute("fav",fav);
 
             }
+
+
             forward("/topic/topicDetail",req,resp);
         }catch (ServiceException e){
             resp.sendError(404);

@@ -325,4 +325,53 @@ public class TopicService {
         return page;
 
     }
+
+    /**
+     * 添加感谢
+     * @param user
+     * @param topicid
+     */
+    public void thanksTopic(User user, String topicid) {
+        //添加感谢
+        Thanks thanks = new Thanks();
+        thanks.setUserid(user.getId());
+        thanks.setTopicid(Integer.valueOf(topicid));
+
+        ThanksDao thanksDao =new ThanksDao();
+        thanksDao.save(thanks);
+
+        //更新帖子感谢数
+        Topic topic = topicDao.findTopicById(topicid);
+        if(topic==null){
+            throw new ServiceException("帖子已删除或不存在");
+        }else{
+            topic.setThankyounum(topic.getThankyounum()+1);
+            topicDao.update(topic);
+        }
+
+    }
+
+    /**
+     * 取消感谢
+     * @param user
+     * @param topicid
+     */
+    public void unthanksTopic(User user, String topicid) {
+        ThanksDao thanksDao =new ThanksDao();
+        thanksDao.delThanks(user,Integer.valueOf(topicid));
+
+        //更新帖子
+        Topic topic = topicDao.findTopicById(topicid);
+        if(topic==null){
+            throw new ServiceException("帖子已删除或不存在");
+        }else{
+            topic.setThankyounum(topic.getThankyounum()-1);
+            topicDao.update(topic);
+        }
+    }
+
+    public Thanks findThankByUserIdAndTopidid(User user, String topicId) {
+        ThanksDao thanksDao = new ThanksDao();
+        return thanksDao.findByIdAndTopicid(user.getId(),topicId);
+    }
 }

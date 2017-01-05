@@ -40,7 +40,6 @@ public class FavServlet extends BaseServlet {
             }
 
             Topic topic = topicService.findTopicById(topicid);
-            System.out.println(topic.getFavnum());
             result.setData(topic.getFavnum());//获取此贴收藏数量
         }else{
             result.setMessage("参数异常");

@@ -54,7 +54,15 @@
                         <li><a href="javascript:;" id="favtopic">加入收藏</a></li>
                     </c:otherwise>
                 </c:choose>
-                <li><a href="">感谢</a></li>
+                <c:choose>
+                    <c:when test="${not empty thanks}">
+                        <li><a href="javascript:;" id="thanksTopic">已感谢</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a href="javascript:;" id="thanksTopic">感谢</a></li>
+                    </c:otherwise>
+                </c:choose>
+
                 <c:if test="${requestScope.topic.userid==sessionScope.curr_user.id and requestScope.topic.edit }">
                     <li><a href="/editTopic?topicid=${topic.id}">编辑</a></li>
                 </c:if>
@@ -62,7 +70,7 @@
             <ul class="unstyled inline pull-right muted">
                 <li>${topic.clicknum}次点击</li>
                 <li > <span id="topicFav">${topic.favnum}</span> 人收藏</li>
-                <li>${topic.thankyounum}人感谢</li>
+                <li ><span id="thankTopic">${topic.thankyounum}</span> 人感谢</li>
             </ul>
         </div>
     </div>
@@ -191,6 +199,38 @@
             })
         })
 
+        //当点击感谢/已感谢时加入感谢或取消感谢
+        $("#thanksTopic").click(function () {
+            //获取文本
+            var $this = $(this);
+            var thanksText = $(this).text();
+            var action ="";
+            //判断文本是事感谢还是已感谢
+            if(thanksText=="感谢"){
+                //添加感谢
+                action="thanks"
+            }else{
+                action="unthanks"
+            }
+            //异步post请求
+            $.post("/thanksTopic",{"topicid":${topic.id},"action":action})
+                .done(function(json){
+                if(json.state=='success'){
+                    if(action=="thanks"){
+                        $this.text("已感谢");
+                    }else{
+                        $this.text("感谢");
+                    }
+                    $("#thankTopic").text(json.data)
+                } else{
+                    alert(json.message)
+                }
+
+
+        }).error(function(){
+            alert("服务器错误，请稍后重试！")
+        })
+        });
     });
 
 </script>
