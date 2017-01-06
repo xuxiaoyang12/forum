@@ -1,7 +1,6 @@
 package com.kaishengit.web;
 
 import com.google.gson.Gson;
-import com.kaishengit.entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -39,12 +38,12 @@ public class BaseServlet extends HttpServlet {
         writer.close();
     }
 
-    public User getCurrentUser(HttpServletRequest request) {
+    public com.kaishengit.pojo.User getCurrentUser(HttpServletRequest request) {
         HttpSession session = request.getSession();
         if(session.getAttribute("curr_user") == null) {
             return null;
         } else {
-            return (User) session.getAttribute("curr_user");
+            return (com.kaishengit.pojo.User) session.getAttribute("curr_user");
         }
     }
 

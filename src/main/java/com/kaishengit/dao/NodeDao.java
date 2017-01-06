@@ -1,6 +1,6 @@
 package com.kaishengit.dao;
 
-import com.kaishengit.entity.Node;
+import com.kaishengit.pojo.Node;
 import com.kaishengit.util.DbHelp;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;

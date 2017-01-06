@@ -1,8 +1,8 @@
 package com.kaishengit.web.admin;
 
 import com.google.common.collect.Maps;
-import com.kaishengit.entity.Admin;
 import com.kaishengit.exception.ServiceException;
+import com.kaishengit.pojo.Admin;
 import com.kaishengit.service.AdminService;
 import com.kaishengit.web.BaseServlet;
 

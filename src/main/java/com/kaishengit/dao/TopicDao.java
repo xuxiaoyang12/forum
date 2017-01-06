@@ -1,9 +1,8 @@
 package com.kaishengit.dao;
 
-import com.kaishengit.entity.Topic;
-import com.kaishengit.entity.TopicReplyCount;
-import com.kaishengit.entity.User;
-import com.kaishengit.util.Config;
+import com.kaishengit.pojo.Topic;
+import com.kaishengit.pojo.TopicReplyCount;
+import com.kaishengit.pojo.User;
 import com.kaishengit.util.DbHelp;
 import com.kaishengit.util.StringUtils;
 import org.apache.commons.dbutils.BasicRowProcessor;

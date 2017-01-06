@@ -1,12 +1,10 @@
 package com.kaishengit.web;
 
-import com.kaishengit.entity.Node;
-import com.kaishengit.entity.Topic;
+import com.kaishengit.pojo.Node;
+import com.kaishengit.pojo.Topic;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.util.Page;
 import com.kaishengit.util.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

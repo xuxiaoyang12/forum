@@ -1,7 +1,6 @@
 package com.kaishengit.web.user;
 
 import com.google.common.collect.Maps;
-import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
 import com.kaishengit.service.UserService;
 import com.kaishengit.util.StringUtils;
@@ -27,7 +26,7 @@ public class ResetPasswordServlet extends BaseServlet {
             UserService userService = new UserService();
 
             try {
-                User user = userService.foundPasswordGetUserByToken(token);
+                com.kaishengit.pojo.User user = userService.foundPasswordGetUserByToken(token);
 
                 req.setAttribute("user",user);
                 req.setAttribute("token",token);

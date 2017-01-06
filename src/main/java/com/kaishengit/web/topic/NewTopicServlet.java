@@ -1,10 +1,10 @@
 package com.kaishengit.web.topic;
 
 import com.kaishengit.dto.JsonResult;
-import com.kaishengit.entity.Node;
-import com.kaishengit.entity.Topic;
-import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
+import com.kaishengit.pojo.Node;
+import com.kaishengit.pojo.Topic;
+import com.kaishengit.pojo.User;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.util.Config;
 import com.kaishengit.web.BaseServlet;
@@ -50,6 +50,7 @@ public class NewTopicServlet extends BaseServlet {
         JsonResult jsonResult = null;
         try {
             topic = service.addNewTopic(title, content, Integer.valueOf(nodeid), user.getId());
+            System.out.println(topic);
             jsonResult = new JsonResult(topic);
         }catch (ServiceException e){
             jsonResult = new JsonResult(e.getMessage());

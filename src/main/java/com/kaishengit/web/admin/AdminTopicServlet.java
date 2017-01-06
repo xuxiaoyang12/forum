@@ -1,8 +1,8 @@
 package com.kaishengit.web.admin;
 
-import com.kaishengit.entity.Node;
-import com.kaishengit.entity.Topic;
 import com.kaishengit.exception.ServiceException;
+import com.kaishengit.pojo.Node;
+import com.kaishengit.pojo.Topic;
 import com.kaishengit.service.AdminService;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.util.Page;

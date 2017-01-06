@@ -1,13 +1,14 @@
-package com.kaishengit.entity;
+package com.kaishengit.pojo;
 
 import org.joda.time.DateTime;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by jimi_jin on 2016-12-20.
  */
-public class Topic {
+public class Topic implements Serializable {
     private Integer id;
     private String title;
     private String content;

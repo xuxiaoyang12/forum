@@ -1,4 +1,4 @@
-package com.kaishengit.entity;
+package com.kaishengit.pojo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -30,6 +30,20 @@ public class User implements Serializable {
     private Integer state;
     private Timestamp createTime;
     private String avatar;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", state=" + state +
+                ", createTime=" + createTime +
+                ", avatar='" + avatar + '\'' +
+                '}';
+    }
 
     public Integer getId() {
         return id;

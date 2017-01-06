@@ -1,9 +1,11 @@
-package com.kaishengit.entity;
+package com.kaishengit.pojo;
+
+import java.io.Serializable;
 
 /**
  * Created by jimi_jin on 2016-12-20.
  */
-public class Node {
+public class Node implements Serializable {
     private int id;
     private String nodename;
     private int topicnum;

@@ -1,6 +1,6 @@
 package com.kaishengit.web.admin;
 
-import com.kaishengit.entity.Node;
+import com.kaishengit.pojo.Node;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.util.StringUtils;
 import com.kaishengit.web.BaseServlet;

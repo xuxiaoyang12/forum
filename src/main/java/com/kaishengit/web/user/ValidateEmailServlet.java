@@ -1,6 +1,6 @@
 package com.kaishengit.web.user;
 
-import com.kaishengit.entity.User;
+import com.kaishengit.pojo.User;
 import com.kaishengit.service.UserService;
 import com.kaishengit.util.StringUtils;
 import com.kaishengit.web.BaseServlet;
@@ -29,7 +29,7 @@ public class ValidateEmailServlet extends BaseServlet {
             }
         }
         UserService userService = new UserService();
-        User user = userService.findByEmail(email);
+        com.kaishengit.pojo.User user = userService.findByEmail(email);
 
         if (user == null) {
             renderText("true", resp);

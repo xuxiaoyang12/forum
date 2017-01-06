@@ -1,10 +1,10 @@
 package com.kaishengit.web.topic;
 
 import com.google.common.collect.Maps;
-import com.kaishengit.entity.Node;
-import com.kaishengit.entity.Topic;
-import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
+import com.kaishengit.pojo.Node;
+import com.kaishengit.pojo.Topic;
+import com.kaishengit.pojo.User;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.util.Config;
 import com.kaishengit.web.BaseServlet;
@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.ServiceConfigurationError;
 
 /**
  * Created by Mxia on 2016/12/27.

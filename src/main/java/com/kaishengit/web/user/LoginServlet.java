@@ -1,8 +1,8 @@
 package com.kaishengit.web.user;
 
 import com.google.common.collect.Maps;
-import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
+import com.kaishengit.pojo.User;
 import com.kaishengit.service.UserService;
 import com.kaishengit.web.BaseServlet;
 

@@ -1,9 +1,11 @@
-package com.kaishengit.entity;
+package com.kaishengit.pojo;
+
+import java.io.Serializable;
 
 /**
  * Created by Mxia on 2016/12/29.
  */
-public class TopicReplyCount {
+public class TopicReplyCount implements Serializable {
 
     private String time;
     private String replynum;

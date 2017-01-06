@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaishengit.mapper.TopicMapper">
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+          insert into t_topic (title,content,nodeid,userid)
+          values(#{title},#{content},#{nodeid},#{userid})
+    </insert>
+    <select id="count" resultType="int">
+        select count(*) from t_topic
+        <where>
+            <if test="nodeid!=null and nodeid !=''">
+                nodeid=#{nodeid}
+            </if>
+        </where>
+    </select>
+    <select id="findAll" parameterType="map" resultMap="allMap">
+        SELECT tu.username,tu.avatar,tt.*
+        FROM t_topic tt,t_user tu
+        WHERE tt.userid = tu.id
+        <if test="nodeid!=null and nodeid!=''">
+            and nodeid=#{nodeid}
+        </if>
+        ORDER BY tt.lastreplytime DESC
+        LIMIT #{start},#{pageSize}
+
+    </select>
+
+    <resultMap id="allMap" type="Topic">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="favnum" property="favnum"/>
+        <result column="thankyounum" property="thankyounum"/>
+        <result column="replynum" property="replynum"/>
+        <result column="clicknum" property="clicknum"/>
+        <result column="lastreplytime" property="lastreplytime"/>
+        <result column="userid" property="userid"/>
+        <result column="nodeid" property="nodeid"/>
+        <association property="user" column="userid" javaType="User">
+            <result column="username" property="username"/>
+            <result column="avatar" property="avatar"/>
+        </association>
+    </resultMap>
+</mapper>

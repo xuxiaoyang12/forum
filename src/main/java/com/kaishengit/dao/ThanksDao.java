@@ -1,7 +1,7 @@
 package com.kaishengit.dao;
 
-import com.kaishengit.entity.Thanks;
-import com.kaishengit.entity.User;
+import com.kaishengit.pojo.Thanks;
+import com.kaishengit.pojo.User;
 import com.kaishengit.util.DbHelp;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
@@ -15,7 +15,7 @@ public class ThanksDao {
         DbHelp.update(sql,thanks.getUserid(),thanks.getTopicid());
     }
 
-    public void delThanks(User user ,Integer topicid) {
+    public void delThanks(User user , Integer topicid) {
         String sql = "delete from t_thanks where topicid = ? and userid=?";
         DbHelp.update(sql,topicid,user.getId());
     }

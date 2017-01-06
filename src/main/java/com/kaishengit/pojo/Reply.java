@@ -1,11 +1,13 @@
-package com.kaishengit.entity;
+package com.kaishengit.pojo;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by jimi_jin on 2016-12-21.
  */
-public class Reply {
+public class Reply implements Serializable {
 
     private Integer id;
     private String content;
@@ -13,6 +15,15 @@ public class Reply {
     private Integer topicid;
     private Timestamp createtime;
     private User user;
+    private List<User>  userList;
+
+    public List<User> getUserList() {
+        return userList;
+    }
+
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
 
     public User getUser() {
         return user;

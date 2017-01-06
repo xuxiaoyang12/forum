@@ -1,11 +1,12 @@
-package com.kaishengit.entity;
+package com.kaishengit.pojo;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by Mxia on 2016/12/29.
  */
-public class Notify {
+public class Notify implements Serializable {
 
     private Integer id;
     private Integer userid;

@@ -2,7 +2,6 @@ package com.kaishengit.web.user;
 
 import com.google.common.collect.Maps;
 import com.kaishengit.dto.JsonResult;
-import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
 import com.kaishengit.service.UserService;
 import com.kaishengit.util.Config;
@@ -44,7 +43,7 @@ public class SettingServlet extends BaseServlet {
     private void updateAvatar(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String fileKey = req.getParameter("fileKey");
         fileKey=Config.get("qiniu.domain")+fileKey;
-        User user = getCurrentUser(req);
+        com.kaishengit.pojo.User user = getCurrentUser(req);
 
         UserService userService = new UserService();
         userService.updateAvatar(user,fileKey);
@@ -58,7 +57,7 @@ public class SettingServlet extends BaseServlet {
         String oldPassword = req.getParameter("oldpassword");
         String newPassword = req.getParameter("newpassword");
 
-        User user = getCurrentUser(req);
+        com.kaishengit.pojo.User user = getCurrentUser(req);
 
         UserService userService = new UserService();
         try {
@@ -77,7 +76,7 @@ public class SettingServlet extends BaseServlet {
 
     private void updateProfile(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String email = req.getParameter("email");
-        User user = getCurrentUser(req);
+        com.kaishengit.pojo.User user = getCurrentUser(req);
 
         UserService userService = new UserService();
         userService.updateEmail(user,email);

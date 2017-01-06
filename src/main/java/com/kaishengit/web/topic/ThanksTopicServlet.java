@@ -1,9 +1,9 @@
 package com.kaishengit.web.topic;
 
 import com.google.common.collect.Maps;
-import com.kaishengit.entity.Topic;
-import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
+import com.kaishengit.pojo.Topic;
+import com.kaishengit.pojo.User;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.web.BaseServlet;
 import org.apache.commons.lang3.StringUtils;

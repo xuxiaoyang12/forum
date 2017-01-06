@@ -1,12 +1,10 @@
 package com.kaishengit.dao;
 
-import com.kaishengit.entity.Reply;
-import com.kaishengit.entity.User;
-import com.kaishengit.util.Config;
+import com.kaishengit.pojo.Reply;
+import com.kaishengit.pojo.User;
 import com.kaishengit.util.DbHelp;
 import org.apache.commons.dbutils.BasicRowProcessor;
 import org.apache.commons.dbutils.handlers.AbstractListHandler;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

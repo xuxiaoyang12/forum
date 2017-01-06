@@ -1,7 +1,7 @@
 package com.kaishengit.web.topic;
 
-import com.kaishengit.entity.User;
 import com.kaishengit.exception.ServiceException;
+import com.kaishengit.pojo.User;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.util.StringUtils;
 import com.kaishengit.web.BaseServlet;

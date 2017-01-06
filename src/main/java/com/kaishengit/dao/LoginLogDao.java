@@ -1,6 +1,6 @@
 package com.kaishengit.dao;
 
-import com.kaishengit.entity.LoginLog;
+import com.kaishengit.pojo.LoginLog;
 import com.kaishengit.util.DbHelp;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 

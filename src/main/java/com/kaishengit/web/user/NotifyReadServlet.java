@@ -1,6 +1,5 @@
 package com.kaishengit.web.user;
 
-import com.kaishengit.entity.User;
 import com.kaishengit.service.UserService;
 import com.kaishengit.web.BaseServlet;
 

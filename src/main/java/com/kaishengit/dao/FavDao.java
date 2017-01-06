@@ -1,6 +1,6 @@
 package com.kaishengit.dao;
 
-import com.kaishengit.entity.Fav;
+import com.kaishengit.pojo.Fav;
 import com.kaishengit.util.DbHelp;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 

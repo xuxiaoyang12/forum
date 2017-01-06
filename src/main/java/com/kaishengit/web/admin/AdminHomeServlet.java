@@ -1,6 +1,6 @@
 package com.kaishengit.web.admin;
 
-import com.kaishengit.entity.TopicReplyCount;
+import com.kaishengit.pojo.TopicReplyCount;
 import com.kaishengit.service.TopicService;
 import com.kaishengit.util.Page;
 import com.kaishengit.util.StringUtils;

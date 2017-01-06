@@ -1,9 +1,12 @@
-package com.kaishengit.entity;
+package com.kaishengit.pojo;
+
+import java.io.Serializable;
 
 /**
- * Created by Mxia on 2017/1/4.
+ * Created by Mxia on 2016/12/27.
  */
-public class Thanks {
+public class Fav implements Serializable {
+
     private Integer userid;
     private Integer topicid;
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kaishengit.mapper.TopicReplyCountMapper">
+    <select id="getTopicAndReplyNumList" resultType="TopicReplyCount">
+        SELECT COUNT(*) topicnum,DATE_FORMAT(createtime,'%y-%m-%d') 'time',
+       (SELECT COUNT(*)
+       FROM t_reply
+       WHERE DATE_FORMAT(createtime,'%y-%m-%d')= DATE_FORMAT(t_topic.createtime,'%y-%m-%d')) 'replynum'
+       FROM t_topic
+       GROUP BY (DATE_FORMAT(createtime,'%y-%m-%d'))
+       ORDER BY (DATE_FORMAT(createtime,'%y-%m-%d')) DESC
+       LIMIT #{param1},#{param2};
+    </select>
+
+</mapper>
