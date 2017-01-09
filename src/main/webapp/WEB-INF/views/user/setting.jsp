@@ -3,11 +3,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="shortcut icon" href="/static/img/setting.jpg">
+    <title class="fa fa-cog" >基本设置</title>
     <link href="/static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/js/uploader/webuploader.css">
     <link rel="stylesheet" href="/static/css/style.css">
+
     <style>
         element.style{
             background-color: #04c;

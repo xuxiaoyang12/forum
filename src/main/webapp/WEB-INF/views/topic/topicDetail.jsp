@@ -5,7 +5,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>凯盛论坛-${topic.title}</title>
+    <link rel="icon" href="/static/img/detail.png">
+    <title>Mixa论坛-${topic.title}</title>
     <link href="/static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
@@ -25,6 +26,9 @@
             padding: 0px;
             border: 0px;
             background-color: transparent;
+        }
+        #ckepop{
+            padding-left:20px;
         }
     </style>
 </head>
@@ -113,7 +117,16 @@
                     <input name="topicid" type="hidden" value="${topic.id}">
                     <textarea name="content" id="editor"></textarea>
                 </form>
-                <div class="talk-item muted" style="text-align: right;font-size: 12px">
+                <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">
+                    <span class="jiathis_txt">分享到：</span>
+                    <a class="jiathis_button_tsina">新浪微博</a>
+                    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+                    <a class="jiathis_counter_style"></a>
+                </div>
+                <script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
+                <div class="talk-item muted" style="text-align: right;font-size: 12px"><br/>
                     <span class="pull-left">请尽量让自己的回复能够对别人有帮助回复</span>
                     <button id="replyBtn" class="btn btn-primary">发布</button>
                 </div>
